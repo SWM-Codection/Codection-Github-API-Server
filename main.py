@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+import api.Organization
 import api.Repository
 
 app = FastAPI()
@@ -15,3 +16,4 @@ async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
 app.include_router(api.Repository.router)
+app.include_router(api.Organization.router)
